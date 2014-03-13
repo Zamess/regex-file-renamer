@@ -1,0 +1,16 @@
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe.config
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csprojResolveAssemblyReference.cache
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MainWindow.baml
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MainWindow.g.cs
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\App.g.cs
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer_MarkupCompile.cache
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.g.resources
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.Properties.Resources.resources
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csproj.GenerateResource.Cache
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.pdb
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.exe
+F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.pdb
+Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe.config
+Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.exe
+Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.pdb
