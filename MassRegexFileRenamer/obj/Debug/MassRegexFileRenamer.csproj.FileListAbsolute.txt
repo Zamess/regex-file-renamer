@@ -14,3 +14,16 @@ F:\WindowsHarkka\MassRegexFileRenamer\MassRegexFileRenamer\obj\Debug\MassRegexFi
 Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe.config
 Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.exe
 Z:\Windows ohjelmointi\Mass Regex File Renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.pdb
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe.config
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.exe
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.pdb
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.pdb
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csprojResolveAssemblyReference.cache
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MainWindow.baml
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MainWindow.g.cs
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\App.g.cs
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer_MarkupCompile.cache
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.g.resources
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.Properties.Resources.resources
+E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csproj.GenerateResource.Cache
