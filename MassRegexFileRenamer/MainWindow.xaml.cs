@@ -23,6 +23,12 @@ namespace MassRegexFileRenamer
         public MainWindow()
         {
             InitializeComponent();
+
+            cmbRenaming.Items.Add("Rename files");
+            cmbRenaming.Items.Add("Rename folders");
+            cmbRenaming.Items.Add("Rename files & folders");
+            cmbRenaming.SelectedIndex = 0;
         }
+
     }
 }

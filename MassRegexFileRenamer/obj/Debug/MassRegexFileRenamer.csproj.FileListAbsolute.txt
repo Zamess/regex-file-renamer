@@ -27,3 +27,16 @@ E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer_
 E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.g.resources
 E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.Properties.Resources.resources
 E:\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csproj.GenerateResource.Cache
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe.config
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.exe
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.pdb
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.exe
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\bin\Debug\MassRegexFileRenamer.pdb
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csprojResolveAssemblyReference.cache
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MainWindow.baml
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MainWindow.g.cs
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\App.g.cs
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer_MarkupCompile.cache
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.g.resources
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.Properties.Resources.resources
+C:\Users\F6137\gitti\regex-file-renamer\MassRegexFileRenamer\obj\Debug\MassRegexFileRenamer.csproj.GenerateResource.Cache
