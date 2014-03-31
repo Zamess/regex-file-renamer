@@ -77,7 +77,7 @@
 
                 <DockPanel Grid.Column="0">
 
-                        <Button x:Name="btnPreview" Content="Preview" DockPanel.Dock="Top" FontSize="16" Margin="5"/>
+                        <Button x:Name="btnPreview" Content="Preview" DockPanel.Dock="Top" FontSize="16" Margin="5" Click="btnPreview_Click"/>
                     <DataGrid x:Name="dgAfterExecute"  Height="Auto" Width="Auto" Margin="5" />
                 </DockPanel>
 

@@ -30,5 +30,39 @@ namespace MassRegexFileRenamer
             cmbRenaming.SelectedIndex = 0;
         }
 
+        private void btnPreview_Click(object sender, RoutedEventArgs e)
+        {
+            bool renameFiles, renameFolders;
+            switch (cmbRenaming.Text)
+            {
+                case "Rename files":
+                    renameFiles = true;
+                    renameFolders = false;
+                    break;
+                case "Rename folders":
+                    renameFiles = false;
+                    renameFolders = true;
+                    break;
+                case "Rename files & folders":
+                    renameFiles = true;
+                    renameFolders = true;
+                    break;
+                default:
+                    throw new System.Exception("Invalid value in combobox");    // TODO: better exception?
+            }
+            if (chbRecursively.IsChecked.HasValue)
+            {
+                var fileRenames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
+                foreach (var fr in fileRenames)
+                {
+                    // TODO: display in datagrid
+                }
+            }
+            else
+            {
+                throw new System.Exception("Checkbox neither checked nor unchecked.");    // TODO: better exception?
+            }
+        }
+
     }
 }

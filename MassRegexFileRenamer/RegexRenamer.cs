@@ -13,7 +13,7 @@ namespace MassRegexFileRenamer
         public static List<FileRename> Scan(string folder, string searchPattern, string replacePattern, bool searchRecursively, bool renameFiles, bool renameFolders)
         {
             var files = GetSearchSpace(folder, searchRecursively, renameFiles, renameFolders);
-            var results = FilterBySearchPattern(folder, searchPattern, replacePattern, files);
+            var results = FilterAndApplyRename(folder, searchPattern, replacePattern, files);
             FlagConflicts(results);
             
             return results;
@@ -25,16 +25,22 @@ namespace MassRegexFileRenamer
             var searchRecursivelySO = searchRecursively ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
             if (renameFolders)
             {
-                files.AddRange(Directory.EnumerateDirectories(folder, "*", searchRecursivelySO));
+                foreach (var fileName in Directory.EnumerateDirectories(folder, "*", searchRecursivelySO))
+                {
+                    files.Add(fileName.Substring(folder.Length));
+                }
             }
             if (renameFiles)
             {
-                files.AddRange(Directory.EnumerateFiles(folder, "*", searchRecursivelySO));
+                foreach (var fileName in Directory.EnumerateFiles(folder, "*", searchRecursivelySO))
+                {
+                    files.Add(fileName.Substring(folder.Length));
+                }
             }
             return files;
         }
 
-        private static List<FileRename> FilterBySearchPattern(string folder, string searchPattern, string replacePattern, List<string> files)
+        private static List<FileRename> FilterAndApplyRename(string folder, string searchPattern, string replacePattern, List<string> files)
         {
             var results = new List<FileRename>();
             var searchRegex = new Regex(searchPattern);
