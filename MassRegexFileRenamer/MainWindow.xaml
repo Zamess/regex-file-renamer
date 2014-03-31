@@ -29,7 +29,7 @@
 
                     <DockPanel DockPanel.Dock="Top" LastChildFill="True" >
                         
-                    <Button x:Name="btnBrowse"  Content="Browse" DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="80" Margin="5, 5, 0, 0" />
+                    <Button x:Name="btnBrowse"  Content="Browse" DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="80" Margin="5, 5, 0, 0" Click="btnBrowse_Click" />
                     <TextBox x:Name="txtFileLocation" DockPanel.Dock="Top" Height="25" TextWrapping="Wrap" Text="C:\" Margin="0, 5, 0, 0" />
 
                 </DockPanel>
@@ -71,8 +71,8 @@
             
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Name="Left" Width="*" />
-                    <ColumnDefinition Name="Right" Width="*" />
+                    <ColumnDefinition Name="vasen" Width="*" />
+                    <ColumnDefinition Name="oikea" Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <DockPanel Grid.Column="0">
