@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -21,13 +20,17 @@ namespace MassRegexFileRenamer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string files = "Rename files";
+        private const string folders = "Rename folders";
+        private const string filesAndFolders = "Rename files & folders";
+
         public MainWindow()
         {
             InitializeComponent();
 
-            cmbRenaming.Items.Add("Rename files");
-            cmbRenaming.Items.Add("Rename folders");
-            cmbRenaming.Items.Add("Rename files & folders");
+            cmbRenaming.Items.Add(files);
+            cmbRenaming.Items.Add(folders);
+            cmbRenaming.Items.Add(filesAndFolders);
             cmbRenaming.SelectedIndex = 0;
         }
 
@@ -36,15 +39,15 @@ namespace MassRegexFileRenamer
             bool renameFiles, renameFolders;
             switch (cmbRenaming.Text)
             {
-                case "Rename files":
+                case files:
                     renameFiles = true;
                     renameFolders = false;
                     break;
-                case "Rename folders":
+                case folders:
                     renameFiles = false;
                     renameFolders = true;
                     break;
-                case "Rename files & folders":
+                case filesAndFolders:
                     renameFiles = true;
                     renameFolders = true;
                     break;
@@ -67,11 +70,14 @@ namespace MassRegexFileRenamer
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
-            FolderBrowserDialog browse = new FolderBrowserDialog();
-            DialogResult result = browse.ShowDialog();
+            var browse = new System.Windows.Forms.FolderBrowserDialog();
+            browse.ShowNewFolderButton = false;
+            browse.SelectedPath = "C:\\";
+            var result = browse.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
                 txtFileLocation.Text = browse.SelectedPath;
-            //TODO if statement to check value is given
+            }
         }
-
     }
 }

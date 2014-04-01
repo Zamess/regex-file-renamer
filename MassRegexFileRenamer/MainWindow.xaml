@@ -55,8 +55,7 @@
 
             <DockPanel DockPanel.Dock="Top">
                 <DockPanel DockPanel.Dock="Left">
-                    <CheckBox x:Name="chbRecursively" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0, 0.5, 0, 0" />
-                    <Label DockPanel.Dock="Right" Content="Search recursively" FontSize="12" VerticalAlignment="Center"  />
+                    <CheckBox x:Name="chbRecursively" Content="Search recursively" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0, 0.5, 0, 0" />
                     
                 </DockPanel>
                 
