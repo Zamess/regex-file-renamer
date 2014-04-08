@@ -97,7 +97,7 @@ namespace MassRegexFileRenamer
                 return File.Exists(BaseFolder + System.IO.Path.DirectorySeparatorChar + NewName);
             }
 
-            void Execute()
+            public void Execute()
             {
                 if (!IsStaticName()) {
                     File.Move(BaseFolder + System.IO.Path.DirectorySeparatorChar + OldName, BaseFolder + System.IO.Path.DirectorySeparatorChar + NewName);

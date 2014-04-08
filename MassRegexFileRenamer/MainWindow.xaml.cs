@@ -35,6 +35,19 @@ namespace MassRegexFileRenamer
             cmbRenaming.Items.Add(filesAndFolders);
             cmbRenaming.SelectedIndex = 0;
             
+            renames = null;
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            var browse = new System.Windows.Forms.FolderBrowserDialog();
+            browse.ShowNewFolderButton = false;
+            browse.SelectedPath = "C:\\";
+            var result = browse.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                txtFileLocation.Text = browse.SelectedPath;
+            }
         }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
@@ -77,21 +90,17 @@ namespace MassRegexFileRenamer
             }
         }
 
-        private void btnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            var browse = new System.Windows.Forms.FolderBrowserDialog();
-            browse.ShowNewFolderButton = false;
-            browse.SelectedPath = "C:\\";
-            var result = browse.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                txtFileLocation.Text = browse.SelectedPath;
-            }
-        }
-
         private void btnExecute_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Execute
+            if (renames != null)
+            {
+                foreach (var fr in renames)
+                {
+                    fr.Execute();
+                }
+                renames = null;
+                dgReults.ItemsSource = null;
+            }
         }
     }
 }
