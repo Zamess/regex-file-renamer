@@ -23,6 +23,7 @@ namespace MassRegexFileRenamer
         private const string files = "Rename files";
         private const string folders = "Rename folders";
         private const string filesAndFolders = "Rename files & folders";
+        
 
         public MainWindow()
         {
@@ -32,6 +33,7 @@ namespace MassRegexFileRenamer
             cmbRenaming.Items.Add(folders);
             cmbRenaming.Items.Add(filesAndFolders);
             cmbRenaming.SelectedIndex = 0;
+            
         }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
@@ -59,6 +61,7 @@ namespace MassRegexFileRenamer
                 var fileRenames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
                 foreach (var fr in fileRenames)
                 {
+                    MessageBox.Show(fr.OldName + " -> " + fr.NewName);
                     // TODO: display in datagrid
                 }
             }
@@ -78,6 +81,11 @@ namespace MassRegexFileRenamer
             {
                 txtFileLocation.Text = browse.SelectedPath;
             }
+        }
+
+        private void btnExecute_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Execute
         }
     }
 }
