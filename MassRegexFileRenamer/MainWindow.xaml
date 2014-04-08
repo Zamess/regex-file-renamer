@@ -9,69 +9,44 @@
 
                 <DockPanel DockPanel.Dock="Left">
                     
-                    <StackPanel DockPanel.Dock="Top">
-                        <Label Content="Folder:" HorizontalAlignment="Left" FontSize="16" />
-                    </StackPanel>
-                    
-                    <StackPanel DockPanel.Dock="Bottom">
-                        <Label Content="Rename to:"  FontSize="16" />
-                        
-                    </StackPanel>
-                    
-                    <StackPanel DockPanel.Dock="Left">
-                        <Label Content="Search Pattern:" DockPanel.Dock="Left" FontSize="16" />
-                    
-                    </StackPanel>
-                    
+                    <Label DockPanel.Dock="Top" Content="Folder:" HorizontalAlignment="Left" FontSize="16" />
+
+                    <Label DockPanel.Dock="Top" Content="Search Pattern:" HorizontalAlignment="Left" FontSize="16" />
+
+                    <Label DockPanel.Dock="Bottom" Content="Rename to:" HorizontalAlignment="Left" FontSize="16" />
+                         
                 </DockPanel>
 
                 <DockPanel DockPanel.Dock="Right">
 
                     <DockPanel DockPanel.Dock="Top" LastChildFill="True" >
-                        
-                    <Button x:Name="btnBrowse"  Content="Browse" DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="80" Margin="5, 5, 0, 0" Click="btnBrowse_Click" />
-                    <TextBox x:Name="txtFileLocation" DockPanel.Dock="Top" Height="25" TextWrapping="Wrap" Text="C:\" Margin="0, 5, 0, 0" />
+                        <Button DockPanel.Dock="Right" x:Name="btnBrowse"  Content="Browse"  HorizontalAlignment="Right"  Width="80" Margin="5, 5, 0, 5" Click="btnBrowse_Click" />
+                        <TextBox DockPanel.Dock="Top" x:Name="txtFileLocation"  Height="25" TextWrapping="Wrap" Text="C:\" Margin="0, 5, 0, 5" />
+                    </DockPanel>
 
-                </DockPanel>
-
-                    
+                    <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                        <TextBox DockPanel.Dock="Top" x:Name="txtPattern"  Height="25" TextWrapping="Wrap" Text="" />
+                    </DockPanel>
 
                     <DockPanel DockPanel.Dock="Bottom"  LastChildFill="True">
-
-                        <TextBox x:Name="txtRename" DockPanel.Dock="Left" Height="25" TextWrapping="Wrap" Text="" />
-                        
-                    
-                </DockPanel>
-
-                    <DockPanel DockPanel.Dock="Left" LastChildFill="True">
-
-                        <TextBox x:Name="txtPattern" DockPanel.Dock="Top" Height="25" TextWrapping="Wrap" Text="" />
-
-
+                        <TextBox DockPanel.Dock="Top" x:Name="txtRename"  Height="25" TextWrapping="Wrap" Text="" />  
                     </DockPanel>
 
                 </DockPanel>
+                
             </DockPanel>
 
             <DockPanel DockPanel.Dock="Top">
-                <DockPanel DockPanel.Dock="Left">
-                    <CheckBox x:Name="chbRecursively" Content="Search recursively" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0, 0.5, 0, 0" />
-                    
-                </DockPanel>
-                
-                <DockPanel DockPanel.Dock="Right">
 
-                    <ComboBox x:Name="cmbRenaming" FontSize="12" Margin="5 7 0 5"/>
-                    
-                </DockPanel>
+                <CheckBox DockPanel.Dock="Left" x:Name="chbRecursively" Content="Search recursively"  VerticalAlignment="Center" Margin="0, 0.5, 0, 0" />
+                <ComboBox DockPanel.Dock="Right" x:Name="cmbRenaming" FontSize="12" Margin="5 7 0 5"/>
                 
             </DockPanel>
             
-            
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Name="vasen" Width="*" />
-                    <ColumnDefinition Name="oikea" Width="*" />
+                    <ColumnDefinition Name="left" Width="*" />
+                    <ColumnDefinition Name="right" Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <DockPanel Grid.Column="0">
@@ -86,11 +61,8 @@
 
             </Grid>
             
-            <DockPanel DockPanel.Dock="Bottom">
-                
-                <DataGrid x:Name="dgReults" Height="Auto" Width="Auto" Margin="5" />
-                
-            </DockPanel>
+                <DataGrid DockPanel.Dock="Bottom" x:Name="dgReults" Height="Auto" Width="Auto" Margin="5" />
+            
         </DockPanel>
     </Grid>
 </Window>
