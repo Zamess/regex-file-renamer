@@ -24,6 +24,8 @@ namespace MassRegexFileRenamer
         private const string folders = "Rename folders";
         private const string filesAndFolders = "Rename files & folders";
 
+        private List<RegexRenamer.FileRename> renames;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -56,11 +58,17 @@ namespace MassRegexFileRenamer
             }
             if (chbRecursively.IsChecked.HasValue)
             {
-                var fileRenames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
-                foreach (var fr in fileRenames)
+                renames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
+                var dt = new System.Data.DataTable();
+                dt.Columns.Add("Current name", typeof(string));
+                dt.Columns.Add("New name", typeof(string));
+                foreach (var fr in renames)
                 {
-                    // TODO: display in datagrid
+                    dt.Rows.Add(fr.OldName, fr.NewName);
                 }
+                dgReults.AutoGenerateColumns = true;
+                dgReults.ItemsSource = dt.DefaultView;
+                dgReults.IsReadOnly = true;
             }
             else
             {
