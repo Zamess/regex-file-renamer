@@ -80,7 +80,7 @@
                 </DockPanel>
 
                 <DockPanel  Grid.Column="1">
-                    <Button x:Name="btnExecute" Content="Execute" DockPanel.Dock="Top" FontSize="16" Margin="5"/>
+                    <Button x:Name="btnExecute" Content="Execute" DockPanel.Dock="Top" FontSize="16" Margin="5" Click="btnExecute_Click"/>
                     
                 </DockPanel>
 

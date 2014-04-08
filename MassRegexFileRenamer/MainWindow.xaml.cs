@@ -34,6 +34,7 @@ namespace MassRegexFileRenamer
             cmbRenaming.Items.Add(folders);
             cmbRenaming.Items.Add(filesAndFolders);
             cmbRenaming.SelectedIndex = 0;
+            
         }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
@@ -86,6 +87,11 @@ namespace MassRegexFileRenamer
             {
                 txtFileLocation.Text = browse.SelectedPath;
             }
+        }
+
+        private void btnExecute_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Execute
         }
     }
 }
