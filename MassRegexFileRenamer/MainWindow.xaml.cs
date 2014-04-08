@@ -23,7 +23,8 @@ namespace MassRegexFileRenamer
         private const string files = "Rename files";
         private const string folders = "Rename folders";
         private const string filesAndFolders = "Rename files & folders";
-        
+
+        private List<RegexRenamer.FileRename> renames;
 
         public MainWindow()
         {
@@ -34,6 +35,19 @@ namespace MassRegexFileRenamer
             cmbRenaming.Items.Add(filesAndFolders);
             cmbRenaming.SelectedIndex = 0;
             
+            renames = null;
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            var browse = new System.Windows.Forms.FolderBrowserDialog();
+            browse.ShowNewFolderButton = false;
+            browse.SelectedPath = "C:\\";
+            var result = browse.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                txtFileLocation.Text = browse.SelectedPath;
+            }
         }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
@@ -58,12 +72,17 @@ namespace MassRegexFileRenamer
             }
             if (chbRecursively.IsChecked.HasValue)
             {
-                var fileRenames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
-                foreach (var fr in fileRenames)
+                renames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
+                var dt = new System.Data.DataTable();
+                dt.Columns.Add("Current name", typeof(string));
+                dt.Columns.Add("New name", typeof(string));
+                foreach (var fr in renames)
                 {
-                    MessageBox.Show(fr.OldName + " -> " + fr.NewName);
-                    // TODO: display in datagrid
+                    dt.Rows.Add(fr.OldName, fr.NewName);
                 }
+                dgReults.AutoGenerateColumns = true;
+                dgReults.ItemsSource = dt.DefaultView;
+                dgReults.IsReadOnly = true;
             }
             else
             {
@@ -71,21 +90,17 @@ namespace MassRegexFileRenamer
             }
         }
 
-        private void btnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            var browse = new System.Windows.Forms.FolderBrowserDialog();
-            browse.ShowNewFolderButton = false;
-            browse.SelectedPath = "C:\\";
-            var result = browse.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                txtFileLocation.Text = browse.SelectedPath;
-            }
-        }
-
         private void btnExecute_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Execute
+            if (renames != null)
+            {
+                foreach (var fr in renames)
+                {
+                    fr.Execute();
+                }
+                renames = null;
+                dgReults.ItemsSource = null;
+            }
         }
     }
 }
