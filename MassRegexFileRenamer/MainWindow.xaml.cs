@@ -73,13 +73,7 @@ namespace MassRegexFileRenamer
             if (chbRecursively.IsChecked.HasValue)
             {
                 renames = RegexRenamer.Scan(txtFileLocation.Text, txtPattern.Text, txtRename.Text, (bool)chbRecursively.IsChecked, renameFiles, renameFolders);
-                var dt = new System.Data.DataTable();
-                dt.Columns.Add("Current name", typeof(string));
-                dt.Columns.Add("New name", typeof(string));
-                foreach (var fr in renames)
-                {
-                    dt.Rows.Add(fr.OldName, fr.NewName);
-                }
+                var dt = createDataTable();
                 dgReults.AutoGenerateColumns = true;
                 dgReults.ItemsSource = dt.DefaultView;
                 dgReults.IsReadOnly = true;
@@ -88,6 +82,31 @@ namespace MassRegexFileRenamer
             {
                 throw new System.Exception("Checkbox neither checked nor unchecked.");    // TODO: better exception?
             }
+        }
+
+        // creates a DataTable from this.renames
+        private System.Data.DataTable createDataTable()
+        {
+            var dt = new System.Data.DataTable();
+            dt.Columns.Add("Current name", typeof(string));
+            dt.Columns.Add("New name", typeof(string));
+            dt.Columns.Add("Warnings", typeof(string));
+            foreach (var fr in renames)
+            {
+                string warn = "";
+                if (fr.Overwrites()) {
+                    warn += "Overwrites";
+                }
+                if (fr.IsStaticName()) {
+                    if (warn.Length != 0)
+                    {
+                        warn += ", ";
+                    }
+                    warn += "Static";
+                }
+                dt.Rows.Add(fr.OldName, fr.NewName, warn);
+            }
+            return dt;
         }
 
         private void btnExecute_Click(object sender, RoutedEventArgs e)
