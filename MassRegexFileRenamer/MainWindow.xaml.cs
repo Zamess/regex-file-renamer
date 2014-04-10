@@ -104,6 +104,14 @@ namespace MassRegexFileRenamer
                     }
                     warn += "Static";
                 }
+                if (fr.Conflict)
+                {
+                    if (warn.Length != 0)
+                    {
+                        warn += ", ";
+                    }
+                    warn += "Conflict";
+                }
                 dt.Rows.Add(fr.OldName, fr.NewName, warn);
             }
             return dt;
