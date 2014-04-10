@@ -108,7 +108,16 @@ namespace MassRegexFileRenamer
             public void Execute()
             {
                 if (!IsStaticName()) {
-                    File.Move(BaseFolder + System.IO.Path.DirectorySeparatorChar + OldName, BaseFolder + System.IO.Path.DirectorySeparatorChar + NewName);
+                    var oldPath = BaseFolder + System.IO.Path.DirectorySeparatorChar + OldName;
+                    var newPath = BaseFolder + System.IO.Path.DirectorySeparatorChar + NewName;
+                    if ((File.GetAttributes(oldPath) & FileAttributes.Directory) == FileAttributes.Directory) // Path is a directory.
+                    {
+                        Directory.Move(oldPath, newPath);
+                    }
+                    else    // Path is a file.
+                    {
+                        File.Move(oldPath, newPath); 
+                    }
                 }
             }
         }
